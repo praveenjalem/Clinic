@@ -14,7 +14,7 @@
 
 	<servlet>
 		<servlet-name>MyXMLRPCServlet</servlet-name>
-		<servlet-class>test.xmlrpc.MyXMLRPCServlet</servlet-class>
+		<servlet-class>test.xmlrpc.server.MyXMLRPCServlet</servlet-class>
 		<init-param>
 			<param-name>enabledForExtensions</param-name>
 			<param-value>true</param-value>
