@@ -8,14 +8,27 @@
 		<init-param>
 			<param-name>enabledForExtensions</param-name>
 			<param-value>true</param-value>
-			<description>
-            	Sets, whether the servlet supports vendor extensions for XML-RPC.
-            </description>
+			<description>Sets, whether the servlet supports vendor extensions for XML-RPC.</description>
+		</init-param>
+	</servlet>
+
+	<servlet>
+		<servlet-name>MyXMLRPCServlet</servlet-name>
+		<servlet-class>test.xmlrpc.MyXMLRPCServlet</servlet-class>
+		<init-param>
+			<param-name>enabledForExtensions</param-name>
+			<param-value>true</param-value>
+			<description>Sets, whether the servlet supports vendor extensions for XML-RPC.</description>
 		</init-param>
 	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>XmlRpcServlet</servlet-name>
 		<url-pattern>/xmlrpc</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>MyXMLRPCServlet</servlet-name>
+		<url-pattern>/xmlrpc2</url-pattern>
 	</servlet-mapping>
 </web-app>
