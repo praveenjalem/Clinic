@@ -1,0 +1,6 @@
+{
+"theatres" : [
+	{"name" : "Alankar", "location" : "Shivajinagaer"},
+	{"name" : "Everest", "location" : "Frazer town"}
+]
+}
