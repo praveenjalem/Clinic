@@ -6,3 +6,6 @@
 *.ear
 
 ExtJsMVCApp/WebContent/extjs/*
+ExtJsMVCApp/build
+
+XMLRPC/build
