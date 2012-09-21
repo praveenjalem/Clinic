@@ -3,6 +3,7 @@ package test.xmlrpc.server;
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.XmlRpcRequest;
 import org.apache.xmlrpc.common.XmlRpcHttpRequestConfig;
+import org.apache.xmlrpc.metadata.XmlRpcSystemImpl;
 import org.apache.xmlrpc.server.AbstractReflectiveHandlerMapping.AuthenticationHandler;
 import org.apache.xmlrpc.server.PropertyHandlerMapping;
 import org.apache.xmlrpc.server.XmlRpcHandlerMapping;
@@ -33,6 +34,7 @@ public class MyXMLRPCServlet extends XmlRpcServlet {
 		};
 		
 		mapping.setAuthenticationHandler(handler);
+		XmlRpcSystemImpl.addSystemHandler(mapping);//for enabling XML-RPC introspection
 		return mapping;
 	}
 }

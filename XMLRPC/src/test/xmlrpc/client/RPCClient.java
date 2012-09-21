@@ -14,9 +14,9 @@ public class RPCClient {
 
 	public static void main(String[] args) throws IOException, XmlRpcException {
 		XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-		//config.setServerURL(new URL("http://localhost:8080/XMLRPC/xmlrpc"));
-		//config.setServerURL(new URL("http://localhost:8080/XMLRPC/xmlrpc2"));
-		config.setServerURL(new URL("http://localhost:8080/xmlrpc"));
+		//config.setServerURL(new URL("http://localhost:8080/XMLRPC/xmlrpc"));//xmlrpcservlet
+		config.setServerURL(new URL("http://localhost:8080/XMLRPC/xmlrpc2"));//myservlet
+		//config.setServerURL(new URL("http://localhost:8080/xmlrpc"));//webserver
 		config.setBasicPassword("admin");
 		config.setBasicUserName("admin");
 		
@@ -35,6 +35,14 @@ public class RPCClient {
 		Calculator calc = (Calculator)factory.newInstance(Calculator.class);
 		int factResult = calc.addIntegers(new Integer(55), new Integer(66) );
 		System.out.println("The result is :: " + factResult);
+		
+		Object methodList = client.execute("system.listMethods", new Object[]{});
+		if(methodList instanceof Object[]) {
+			for (Object method : (Object[])methodList) {
+				System.out.println(method);
+			}
+		}
+		//Also supported system.methodSignature, system.methodHelp
 		
 	}
 }
